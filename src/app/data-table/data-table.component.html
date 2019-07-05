@@ -1,0 +1,120 @@
+
+<div class="container mt-5" >
+  <div class="row">
+    <div class="col">
+      <h2>Bot related research repository</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p style="font-size: small">If you would like to cite the repository website please use this BibTeX entry:<br><br>
+
+        @misc(Bot_Research_Repository,<br>
+        author = (Das Lab),<br>
+        title = (The Bot Repository: A repository of research articles on Software Bots),<br>
+        publisher = (Das Lab, Concordia),<br>
+        note = (http://das.encs.concordia.ca/)<br>
+        )
+      </p>
+    </div>
+    <div class="col">
+      <img class="mx-auto d-block" alt="No image" src="../../assets/images/bot-icon.png" height=280>
+    </div>
+  </div>
+</div>
+
+<!--&lt;!&ndash; New stuff &ndash;&gt;-->
+<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-abstract="@mdo">Open modal for @mdo</button>-->
+<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-abstract="@fat">Open modal for @fat</button>-->
+<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-abstract="@getbootstrap">Open modal for @getbootstrap</button>-->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Abstract</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- New stuff -->
+
+
+
+
+
+
+
+<div class="container mt-2 mb-3">
+<div class="mat-elevation-z8 data-table">
+  <table mat-table class="full-width-table" matSort aria-label="Elements">
+
+
+    <!-- Id Column -->
+<!--    <ng-container matColumnDef="id">-->
+<!--      <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>-->
+<!--      <td mat-cell *matCellDef="let row">{{row.id}}</td>-->
+<!--    </ng-container>-->
+
+
+
+
+    <!-- authors Column -->
+    <ng-container matColumnDef="authors">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Authors</th>
+    <td mat-cell *matCellDef="let row">{{row.authors}}</td>
+  </ng-container>
+
+
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Title</th>
+      <td mat-cell *matCellDef="let row"><a href="#exampleModal" [attr.data-abstract]=row.abstract [attr.data-title]=row.title data-toggle="modal">{{row.title}}</a></td>
+    </ng-container>
+
+    <ng-container matColumnDef="year">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Year</th>
+      <td mat-cell *matCellDef="let row">{{row.year}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="journal">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Journal</th>
+      <td mat-cell *matCellDef="let row">{{row.journal}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="paperLink">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Paper Link</th>
+      <td mat-cell *matCellDef="let row"><a href="{{row.paperLink}}">Link</a></td>
+    </ng-container>
+
+    <ng-container matColumnDef="dataLink">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="font-weight-bold" >Data Link</th>
+      <td mat-cell *matCellDef="let row"><a href="{{row.dataLink}}">Link</a></td>
+    </ng-container>
+
+    <ng-container matColumnDef="abstract">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Abstract</th>
+      <td mat-cell *matCellDef="let row">
+        <button [attr.data-abstract]=row.abstract [attr.data-title]=row.title class="btn btn-primary" type="button" data-toggle="modal" data-target="#exampleModal">Abstract</button>
+      </td>
+
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator #paginator
+      [length]="dataSource?.data.length"
+      [pageIndex]="0"
+      [pageSize]="10"
+      [pageSizeOptions]="[5, 10, 20, 40, 100]">
+  </mat-paginator>
+</div>
+</div>

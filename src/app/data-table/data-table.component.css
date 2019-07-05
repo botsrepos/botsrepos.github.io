@@ -1,0 +1,119 @@
+.full-width-table {
+  width: 100%;
+}
+
+.data-table{
+  width: 100%;
+}
+
+th{
+  font-size: medium;
+  font-weight: bold;
+  text-align: center;
+  color: black;
+  /*align-self: center;*/
+}
+
+p .citation_p {
+  font-size: small;
+}
+
+.mat-column-authors {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 25% !important;
+  width: 25% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+
+.mat-column-title {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 30% !important;
+  width: 30% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+
+.mat-column-journal {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 25% !important;
+  width: 25% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.mat-column-year {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 10% !important;
+  width: 10% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+
+/*.mat-column-paperLink {*/
+/*  word-wrap: break-word !important;*/
+/*  white-space: unset !important;*/
+/*  flex: 0 0 5% !important;*/
+/*  width: 5% !important;*/
+/*  overflow-wrap: break-word;*/
+/*  word-wrap: break-word;*/
+
+/*  word-break: break-word;*/
+
+/*  -ms-hyphens: auto;*/
+/*  -moz-hyphens: auto;*/
+/*  -webkit-hyphens: auto;*/
+/*  hyphens: auto;*/
+/*}*/
+
+
+/*.mat-column-dataLink {*/
+/*  word-wrap: break-word !important;*/
+/*  white-space: unset !important;*/
+/*  flex: 0 0 5% !important;*/
+/*  width: 5% !important;*/
+/*  overflow-wrap: break-word;*/
+/*  word-wrap: break-word;*/
+
+/*  word-break: break-word;*/
+
+/*  -ms-hyphens: auto;*/
+/*  -moz-hyphens: auto;*/
+/*  -webkit-hyphens: auto;*/
+/*  hyphens: auto;*/
+/*}*/

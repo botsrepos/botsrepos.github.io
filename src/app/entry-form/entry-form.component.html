@@ -1,0 +1,93 @@
+<div class="container mt-4 mb-4">
+  <form #f="ngForm" (ngSubmit)="submit(f)">
+    <h3>Contact information</h3>
+
+    <div class="row mt-2 ">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Name" ngModel name="contactName" [(ngModel)]="entry.contactName">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Email" ngModel name="contactEmail" [(ngModel)]="entry.contactEmail">
+      </div>
+    </div>
+
+    <h3 class="mt-5">Paper/Data information</h3>
+
+    <div class="row mt-1">
+      <div class="col">
+        <label>Authors</label>
+        <input type="text" class="form-control" ngModel name="authors" [(ngModel)]="entry.authors" >
+      </div>
+    </div>
+
+    <div class="row mt-1">
+      <div class="col">
+        <label>Title</label>
+        <input type="text" class="form-control" ngModel name="title" [(ngModel)]="entry.title">
+      </div>
+    </div>
+
+    <div class="row mt-1">
+      <div class="col">
+        <label>Year</label>
+        <input type="text" class="form-control" ngModel name="year" [(ngModel)]="entry.year">
+      </div>
+    </div>
+
+    <div class="row mt-1">
+      <div class="col">
+        <label>Journal</label>
+        <input type="text" class="form-control" ngModel name="journal" [(ngModel)]="entry.journal">
+      </div>
+    </div>
+
+    <div class="row mt-1">
+      <div class="col">
+        <label>Paper Link</label>
+        <input type="text" class="form-control" ngModel name="paperLink" [(ngModel)]="entry.paperLink">
+      </div>
+    </div>
+
+    <div class="row mt-1">
+      <div class="col">
+        <label>Data Link</label>
+        <input type="text" class="form-control" ngModel name="dataLink" [(ngModel)]="entry.dataLink">
+      </div>
+    </div>
+
+<!--    <div class="row mt-1">-->
+<!--      <div class="col">-->
+<!--        <label>Type</label>-->
+<!--        <div class="form-check">-->
+<!--          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>-->
+<!--          <label class="form-check-label" for="exampleRadios1">-->
+<!--            Default radio-->
+<!--          </label>-->
+<!--        </div>-->
+<!--        <div class="form-check">-->
+<!--          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">-->
+<!--          <label class="form-check-label" for="exampleRadios2">-->
+<!--            Second default radio-->
+<!--          </label>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    <div class="row mt-1">-->
+<!--      <div class="col">-->
+<!--        <label>link</label>-->
+<!--        <input type="text" class="form-control" ngModel name="link">-->
+<!--      </div>-->
+<!--    </div>-->
+
+    <div class="row mt-1">
+      <div class="col">
+        <label>Abstract</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" ngModel name="abstract" [(ngModel)]="entry.abstract"></textarea>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3" >Submit</button>
+  </form>
+</div>
+
