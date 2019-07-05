@@ -1,3 +1,4 @@
 
 *.xml
 browserslist
+node_modules/
