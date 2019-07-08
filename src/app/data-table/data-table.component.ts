@@ -3,6 +3,8 @@ import { MatPaginator, MatSort, MatTable } from '@angular/material';
 import { DataTableDataSource } from './data-table-datasource';
 import {DataTableItem} from './data-table-item.model';
 import {DataTableService} from './data-table.service';
+declare var $: any;
+// import {$} from 'protractor';
 
 
 @Component({
@@ -21,7 +23,7 @@ export class DataTableComponent implements AfterViewInit, OnInit {
 
   cardContent ;
 
-  setCardValues(author) {
+    setCardValues(author) {
     this.cardContent = author;
     console.log(this.cardContent);
   }
@@ -37,5 +39,27 @@ export class DataTableComponent implements AfterViewInit, OnInit {
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
     // this.table.renderRows();
+  }
+
+  triggerModal(rowTitle, rowAbstract) {
+    // let modal = document.getElementById('myModalExample');
+    let abstract = rowAbstract;
+    let title = rowTitle;
+
+    // console.log('abstract: ' + abstract);
+    // console.log('title: ' + title);
+
+    // alert(title);
+    // alert(abstract);
+
+
+    var modal = $('#exampleModal');
+    // modal.find('.modal-title').text('New message to ' + recipient)
+    modal.find('.modal-header h5').text(title);
+    modal.find('.modal-body').text(abstract);
+    modal.modal('toggle');
+    // modal.toggle();
+
+    // console.log('khaled');
   }
 }

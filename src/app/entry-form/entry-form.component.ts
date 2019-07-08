@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+// import {validate} from 'codelyzer/walkerFactory/walkerFn';
+declare var $: any;
 
 interface FormEntry {
   contactName: string;
@@ -31,12 +33,24 @@ export class EntryFormComponent implements OnInit {
   }
 
   submit(f) {
-    console.log('entry object ');
-    console.log(this.entry);
-    this.http.post(this.url + this.post, this.entry).subscribe(response => {
+
+    // Get the values of the form fields as an object.
+    let entry = f.value;
+    let msg = 'The entry with title \"' + entry.title + '\" has been submitted successfully and will be reviewed shortly.' ;
+
+    // Prepare and show the success message
+    $('#successMsg').text(msg);
+    $('#successMsg').show();
+
+    // Send the post request with the entry (form) data.
+    this.http.post(this.url + this.post, entry).subscribe(response => {
       console.log(response);
     });
+
+    // Reset the form.
+    f.reset();
   }
+
 }
 
 

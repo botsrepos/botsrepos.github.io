@@ -1,93 +1,118 @@
-<div class="container mt-4 mb-4">
-  <form #f="ngForm" (ngSubmit)="submit(f)">
+<div class="container mt-4 mb-4 ">
+
+  <div id="successMsg" class="alert alert-success" role="alert" style="display: none">
+  </div>
+
+  <form #f="ngForm" (ngSubmit)="submit(f)" class="form-group">
+
     <h3>Contact information</h3>
 
-    <div class="row mt-2 ">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="Name" ngModel name="contactName" [(ngModel)]="entry.contactName">
+    <div class="form-row mt-2 ">
+      <div class="form-group col">
+        <label for="contactName" class="control-label">Name</label>
+        <input type="text" class="form-control" id="contactName"
+               required
+               ngModel name="contactName" #contactName="ngModel" >
+        <div *ngIf="contactName.touched && !contactName.valid"
+             class="alert alert-danger">
+          Name is required
+        </div>
       </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="Email" ngModel name="contactEmail" [(ngModel)]="entry.contactEmail">
+      <div class="form-group col">
+        <label for="contactEmail" class="control-label">Email</label>
+        <input type="email" class="form-control" id="contactEmail"
+               required
+               ngModel name="contactEmail" #contactEmail="ngModel" >
+        <div *ngIf="contactEmail.touched && !contactEmail.valid"
+             class="alert alert-danger">
+          Email is required
+        </div>
       </div>
     </div>
 
     <h3 class="mt-5">Paper/Data information</h3>
 
-    <div class="row mt-1">
-      <div class="col">
-        <label>Authors</label>
-        <input type="text" class="form-control" ngModel name="authors" [(ngModel)]="entry.authors" >
+    <div class="row mt-1 ">
+      <div class="col ">
+        <label for="authors" class="control-label">Authors</label>
+        <input type="text" class="form-control" id="authors"
+               required
+               ngModel name="authors" #authors="ngModel" >
+        <div *ngIf="authors.touched && !authors.valid"
+             class="alert alert-danger">
+          Authors are required
+        </div>
       </div>
     </div>
 
     <div class="row mt-1">
       <div class="col">
-        <label>Title</label>
-        <input type="text" class="form-control" ngModel name="title" [(ngModel)]="entry.title">
+        <label for="title" class="control-label">Title</label>
+        <input type="text" class="form-control" id="title"
+               required
+               ngModel name="title" #title="ngModel" >
+        <div *ngIf="title.touched && !title.valid"
+             class="alert alert-danger">
+          Title is required
+        </div>
       </div>
     </div>
 
     <div class="row mt-1">
       <div class="col">
-        <label>Year</label>
-        <input type="text" class="form-control" ngModel name="year" [(ngModel)]="entry.year">
+        <label for="year" class="control-label">Year</label>
+        <input type="text" class="form-control" id="year"
+               required
+               ngModel name="year" #year="ngModel" >
+        <div *ngIf="year.touched && !year.valid"
+             class="alert alert-danger">
+          Year is required
+        </div>
       </div>
     </div>
 
     <div class="row mt-1">
       <div class="col">
-        <label>Journal</label>
-        <input type="text" class="form-control" ngModel name="journal" [(ngModel)]="entry.journal">
+        <label for="journal" class="control-label">Journal</label>
+        <input type="text" class="form-control" id="journal"
+               required
+               ngModel name="journal" #journal="ngModel" >
+        <div *ngIf="journal.touched && !journal.valid"
+             class="alert alert-danger">
+          Journal is required
+        </div>
       </div>
     </div>
 
     <div class="row mt-1">
       <div class="col">
-        <label>Paper Link</label>
-        <input type="text" class="form-control" ngModel name="paperLink" [(ngModel)]="entry.paperLink">
+        <label for="paperLink" class="control-label">Paper Link</label>
+        <input type="text" class="form-control" id="paperLink"
+               required
+               ngModel name="paperLink" #paperLink="ngModel" >
+        <div *ngIf="paperLink.touched && !paperLink.valid"
+             class="alert alert-danger">
+          Paper link is required
+        </div>
       </div>
     </div>
 
     <div class="row mt-1">
       <div class="col">
-        <label>Data Link</label>
-        <input type="text" class="form-control" ngModel name="dataLink" [(ngModel)]="entry.dataLink">
+        <label for="dataLink">Data Link</label>
+        <input type="text" class="form-control" id="dataLink"
+               ngModel name="dataLink" #dataLink="ngModel" >
       </div>
     </div>
-
-<!--    <div class="row mt-1">-->
-<!--      <div class="col">-->
-<!--        <label>Type</label>-->
-<!--        <div class="form-check">-->
-<!--          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>-->
-<!--          <label class="form-check-label" for="exampleRadios1">-->
-<!--            Default radio-->
-<!--          </label>-->
-<!--        </div>-->
-<!--        <div class="form-check">-->
-<!--          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">-->
-<!--          <label class="form-check-label" for="exampleRadios2">-->
-<!--            Second default radio-->
-<!--          </label>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-
-<!--    <div class="row mt-1">-->
-<!--      <div class="col">-->
-<!--        <label>link</label>-->
-<!--        <input type="text" class="form-control" ngModel name="link">-->
-<!--      </div>-->
-<!--    </div>-->
 
     <div class="row mt-1">
       <div class="col">
         <label>Abstract</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" ngModel name="abstract" [(ngModel)]="entry.abstract"></textarea>
+        <textarea class="form-control" id="abstract" rows="3" ngModel name="abstract"></textarea>
       </div>
     </div>
 
-    <button type="submit" class="btn btn-primary mt-3" >Submit</button>
+    <button type="submit" class="btn btn-primary mt-3" [disabled]="!f.valid">Submit</button>
   </form>
 </div>
 
