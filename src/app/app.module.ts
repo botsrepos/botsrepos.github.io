@@ -32,6 +32,7 @@ import { FooterComponent } from './footer/footer.component';
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
+      { path: '', redirectTo: '/home', pathMatch: 'full' },
       {path: 'home', component: DataTableComponent },
       {path: 'entryform', component: EntryFormComponent }
     ])
