@@ -19,7 +19,7 @@ export class DataTableComponent implements AfterViewInit, OnInit {
   dataSource: DataTableDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['authors', 'title', 'year', 'journal', 'paperLink', 'dataLink', 'abstract'];
+  displayedColumns = ['authors', 'title', 'venue', 'venueType', 'year', 'paperLink', 'dataLink', 'abstract'];
 
   cardContent ;
 

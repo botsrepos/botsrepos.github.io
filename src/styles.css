@@ -4,4 +4,20 @@
 
 body{
   background-color: #dee2e6;
+  /*width: 1199px;*/
 }
+
+/*@media (min-width: 768px) {*/
+/*  body{*/
+/*    width:600px;*/
+/*  }}*/
+
+/*@media (min-width: 992px) {*/
+/*  .my-custom-container{*/
+/*    width:720px;*/
+/*  }}*/
+
+/*@media (min-width: 1200px) {*/
+/*  body{*/
+/*    width:1199px;*/
+/*  }}*/

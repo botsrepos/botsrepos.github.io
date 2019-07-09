@@ -3,7 +3,8 @@ export interface DataTableItem {
   authors: string;
   title: string;
   year: string;
-  journal: string;
+  venue: string;
+  venueType: string;
   paperLink: string;
   dataLink: string;
   abstract: string;

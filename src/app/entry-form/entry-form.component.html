@@ -71,18 +71,33 @@
       </div>
     </div>
 
-    <div class="row mt-1">
-      <div class="col">
-        <label for="journal" class="control-label">Journal</label>
-        <input type="text" class="form-control" id="journal"
+    <div class="form-row mt-2 ">
+      <div class="form-group col-8">
+        <label for="venue" class="control-label">Venue</label>
+        <input type="text" class="form-control" id="venue"
                required
-               ngModel name="journal" #journal="ngModel" >
-        <div *ngIf="journal.touched && !journal.valid"
+               ngModel name="venue" #venue="ngModel" >
+        <div *ngIf="venue.touched && !venue.valid"
              class="alert alert-danger">
-          Journal is required
+          Venue is required
+        </div>
+      </div>
+      <div class="form-group col-4">
+        <label for="venueType" class="control-label">Venue Type</label>
+        <select class="custom-select custom-select form-control" id="venueType"
+                required
+                ngModel name="venueType" #venueType="ngModel">
+          <option selected value="Journal" >Journal</option>
+          <option value="Conference">Conference</option>
+          <option value="Workshop">Workshop</option>
+        </select>
+        <div *ngIf="venueType.touched && !venueType.valid"
+             class="alert alert-danger">
+          Venue Type is required
         </div>
       </div>
     </div>
+
 
     <div class="row mt-1">
       <div class="col">
